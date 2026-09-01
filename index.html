@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GARGANTUA — Schwarzschild Black Hole Raytracer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="gargantua-canvas"></canvas>
+
+    <!-- HUD Overlay -->
+    <div id="hud" class="hud hidden">
+        <div class="hud-row"><span class="hud-label">FPS</span><span id="hud-fps">--</span></div>
+        <div class="hud-row"><span class="hud-label">RES</span><span id="hud-res">--</span></div>
+        <div class="hud-row"><span class="hud-label">QUALITY</span><span id="hud-quality">--</span></div>
+        <div class="hud-row"><span class="hud-label">CAM DIST</span><span id="hud-camdist">--</span></div>
+        <div class="hud-row"><span class="hud-label">BH MASS</span><span id="hud-mass">--</span></div>
+        <div class="hud-row"><span class="hud-label">RAYS</span><span id="hud-rays">--</span></div>
+        <div class="hud-row"><span class="hud-label">STATE</span><span id="hud-state">--</span></div>
+        <div class="hud-row"><span class="hud-label">TIME</span><span id="hud-time">--</span></div>
+        <div class="hud-row"><span class="hud-label">PRESET</span><span id="hud-preset">--</span></div>
+        <div class="hud-row"><span class="hud-label">DEBUG</span><span id="hud-debug">0</span></div>
+    </div>
+
+    <!-- Help Panel -->
+    <div id="help-panel" class="help-panel hidden">
+        <h3>GARGANTUA — Hotkeys</h3>
+        <div class="help-grid">
+            <div><kbd>1-4</kbd> Presets</div>
+            <div><kbd>0-9</kbd> Debug Views</div>
+            <div><kbd>H</kbd> Toggle HUD</div>
+            <div><kbd>Q</kbd> Quality Profile</div>
+            <div><kbd>R</kbd> Camera Reset</div>
+            <div><kbd>Space</kbd> Pause/Resume</div>
+            <div><kbd>P</kbd> Replay Formation</div>
+            <div><kbd>A</kbd> Toggle Audio</div>
+            <div><kbd>F</kbd> Fullscreen</div>
+            <div><kbd>?</kbd> This Help</div>
+        </div>
+        <button id="close-help" class="btn-close">✕</button>
+    </div>
+
+    <!-- Controls Panel (21 Parameters) -->
+    <div id="controls-panel" class="controls-panel hidden">
+        <div class="controls-header">
+            <span>PARAMETERS</span>
+            <button id="close-controls" class="btn-close">✕</button>
+        </div>
+        <div id="controls-list" class="controls-list"></div>
+    </div>
+
+    <!-- Controls Toggle -->
+    <button id="toggle-controls" class="fab" title="Parameters">⚙</button>
+    <button id="toggle-help" class="fab fab-help" title="Help (?)">?</button>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-text">GARGANTUA</div>
+        <div class="loading-sub">Initializing Schwarzschild Raytracer…</div>
+        <div class="loading-bar"><div id="loading-fill"></div></div>
+    </div>
+
+    <!-- Error Fallback -->
+    <div id="error-screen" class="hidden">
+        <div class="error-text">WebGL is not available or unsupported.</div>
+        <div class="error-sub">Please use a modern browser with WebGL support.</div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "./vendor/three/build/three.module.js",
+            "three/addons/": "./vendor/three/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="js/main.js"></script>
+</body>
+                                                                      </html>
+  
